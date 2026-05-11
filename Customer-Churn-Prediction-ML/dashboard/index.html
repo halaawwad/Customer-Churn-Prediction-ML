@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Churn ML Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Data Mining & Machine Learning</p>
+        <h1>Customer Churn Prediction Dashboard</h1>
+        <p class="subtitle">Live results generated from the latest Python run.</p>
+      </div>
+      <div class="status-card">
+        <span>Last Run</span>
+        <strong id="lastRun">Waiting for results...</strong>
+      </div>
+    </section>
+
+    <section class="cards" id="metricCards"></section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Model Comparison</h2>
+        <p>Accuracy, Precision, Recall, and F1-score</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Accuracy</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1 Score</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Best Model</h2>
+        <p>Automatically selected using F1-score.</p>
+      </div>
+      <div id="bestModel" class="best-box"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Generated Visualizations</h2>
+        <p>These images are updated every time you run the Python script.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+  </main>
+
+  <script src="latest_results.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
