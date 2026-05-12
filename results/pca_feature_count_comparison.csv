@@ -1,0 +1,3 @@
+Model,Features_Before_PCA,Components_After_PCA,Reduced_By
+Decision Tree,30,17,13
+SVM,30,17,13

@@ -1,0 +1,2 @@
+K-Means clustering with k=3
+Silhouette score: 0.2626

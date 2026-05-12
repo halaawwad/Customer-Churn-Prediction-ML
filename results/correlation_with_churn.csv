@@ -1,0 +1,31 @@
+,Correlation_With_Churn
+tenure,-0.35222867011307885
+InternetService_Fiber optic,0.30801974494482276
+Contract_Two year,-0.30225346934965014
+PaymentMethod_Electronic check,0.30191874901128496
+InternetService_No,-0.22789044975609363
+OnlineSecurity_No internet service,-0.22789044975609363
+DeviceProtection_No internet service,-0.22789044975609363
+TechSupport_No internet service,-0.22789044975609363
+StreamingMovies_No internet service,-0.22789044975609363
+StreamingTV_No internet service,-0.22789044975609363
+OnlineBackup_No internet service,-0.22789044975609363
+TotalCharges,-0.19903683186929222
+MonthlyCharges,0.19335642223784716
+PaperlessBilling_Yes,0.19182533166646878
+Contract_One year,-0.1778200183499079
+OnlineSecurity_Yes,-0.1712262919485523
+TechSupport_Yes,-0.16467355590159402
+Dependents_Yes,-0.1642214015797254
+SeniorCitizen,0.15088932817647233
+Partner_Yes,-0.15044754495917623
+PaymentMethod_Credit card (automatic),-0.13430175066262845
+PaymentMethod_Mailed check,-0.09168283858842928
+OnlineBackup_Yes,-0.08225486893814256
+DeviceProtection_Yes,-0.06615979128028963
+StreamingTV_Yes,0.06322774611875735
+StreamingMovies_Yes,0.06138154801518694
+MultipleLines_Yes,0.040102127699826115
+MultipleLines_No phone service,-0.01194198002900309
+PhoneService_Yes,0.011941980029003084
+gender_Male,-0.00861209507899784

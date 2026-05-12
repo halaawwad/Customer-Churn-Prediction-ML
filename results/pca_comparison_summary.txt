@@ -1,0 +1,26 @@
+PCA Before vs After Comparison
+========================================
+
+Accuracy Comparison:
+
+        Model  Accuracy_Before_PCA  Accuracy_After_PCA  Accuracy_Change
+Decision Tree             0.715570            0.727875         0.012305
+          SVM             0.745386            0.743493        -0.001893
+
+
+Feature Count Comparison:
+
+        Model  Features_Before_PCA  Components_After_PCA  Reduced_By
+Decision Tree                   30                    17          13
+          SVM                   30                    17          13
+
+
+Computational Time Comparison:
+
+        Model  Train_Time_Before_PCA_Seconds  Train_Time_After_PCA_Seconds  Train_Time_Change_Seconds  Predict_Time_Before_PCA_Seconds  Predict_Time_After_PCA_Seconds  Predict_Time_Change_Seconds
+Decision Tree                       0.030839                      0.063306                   0.032467                         0.008332                        0.010192                     0.001860
+          SVM                       0.458705                      0.394598                  -0.064107                         0.297276                        0.295435                    -0.001841
+
+
+Interpretation:
+PCA was evaluated using accuracy, number of features/components, training time, and prediction time. The purpose is not only to improve accuracy, but also to reduce dimensionality and computational cost while preserving useful information.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Churn Prediction | Interactive Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <main class="app-shell">
+    <section class="hero-card">
+      <div class="hero-text">
+        <span class="pill">Data Mining & Machine Learning</span>
+        <h1>Customer Churn Prediction</h1>
+        <p>
+          An interactive dashboard for the Telco churn project. Use the buttons below to explore the results by project stage instead of scrolling through one long page.
+        </p>
+        <div class="hero-actions">
+          <button class="jump-btn" data-target="overview">Project Overview</button>
+          <button class="jump-btn" data-target="pca">PCA Impact</button>
+          <button class="jump-btn" data-target="models">Model Results</button>
+          <button class="jump-btn" data-target="visuals">Open Visuals</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <span>Recommended Model</span>
+        <strong id="heroBestModel">Loading...</strong>
+        <p id="heroBestText">Results will appear when the dashboard data is loaded.</p>
+      </div>
+    </section>
+
+    <section class="metric-strip" id="metricCards" aria-label="Key project metrics"></section>
+
+    <section class="glass-panel" id="overview">
+      <div class="section-heading">
+        <span class="pill dark">Pipeline</span>
+        <h2>Project Roadmap</h2>
+        <p>Each stage matches the final project requirements: understand, preprocess, sample, analyze features, train, evaluate, and cluster.</p>
+      </div>
+      <div class="step-grid">
+        <article><span>01</span><h3>Data Understanding</h3><p>Dataset size, attribute types, missing values, class distribution, and EDA charts.</p></article>
+        <article><span>02</span><h3>Preprocessing</h3><p>Remove ID, convert TotalCharges, impute missing values, encode categories, and scale numbers.</p></article>
+        <article><span>03</span><h3>Sampling</h3><p>Use a stratified 70/30 train-test split to preserve churn proportions.</p></article>
+        <article><span>04</span><h3>Feature Analysis</h3><p>Correlation, SelectKBest, Decision Tree importance, and PCA dimensionality reduction.</p></article>
+        <article><span>05</span><h3>Classification</h3><p>Compare Decision Tree and SVM using the same preprocessing pipeline.</p></article>
+        <article><span>06</span><h3>Evaluation</h3><p>Accuracy, precision, recall, F1, confusion matrices, PCA time impact, and clustering insights.</p></article>
+      </div>
+    </section>
+
+    <section class="glass-panel" id="pca">
+      <div class="section-heading split">
+        <div>
+          <span class="pill dark">Dimensionality Reduction</span>
+          <h2>PCA Impact</h2>
+          <p>PCA is evaluated by accuracy stability, feature reduction, and computational time before and after applying PCA.</p>
+        </div>
+        <button class="primary-btn" data-open-category="PCA Impact">Show PCA Charts</button>
+      </div>
+      <div class="mini-summary" id="pcaSummary"></div>
+      <div class="table-grid">
+        <div class="table-card">
+          <h3>Accuracy</h3>
+          <table><thead><tr><th>Model</th><th>Before</th><th>After</th><th>Change</th></tr></thead><tbody id="pcaAccuracyTable"></tbody></table>
+        </div>
+        <div class="table-card">
+          <h3>Features</h3>
+          <table><thead><tr><th>Model</th><th>Before</th><th>After</th><th>Reduced</th></tr></thead><tbody id="pcaFeatureTable"></tbody></table>
+        </div>
+        <div class="table-card wide">
+          <h3>Time</h3>
+          <table>
+            <thead><tr><th>Model</th><th>Train Before</th><th>Train After</th><th>Predict Before</th><th>Predict After</th></tr></thead>
+            <tbody id="pcaTimeTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="callout">
+        PCA is useful here mainly when it reduces complexity or time while keeping accuracy almost stable. It is not required to improve accuracy for every model.
+      </div>
+    </section>
+
+    <section class="glass-panel" id="models">
+      <div class="section-heading split">
+        <div>
+          <span class="pill dark">Classification</span>
+          <h2>Decision Tree vs SVM</h2>
+          <p>The models are compared on the same test set using the required classification metrics.</p>
+        </div>
+        <button class="primary-btn" data-open-category="Model Evaluation">Show Model Charts</button>
+      </div>
+      <div class="table-card full-width">
+        <table>
+          <thead><tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1 Score</th></tr></thead>
+          <tbody id="resultsTable"></tbody>
+        </table>
+      </div>
+      <div class="callout" id="bestModel"></div>
+    </section>
+
+    <section class="visual-lab" id="visuals">
+      <div class="section-heading center">
+        <span class="pill dark">Interactive Visual Lab</span>
+        <h2>Click a Category, Then Open the Charts</h2>
+        <p>No long newspaper layout. Pick a stage, then reveal only the figures you need.</p>
+      </div>
+      <div class="tab-bar" id="tabBar"></div>
+      <div class="active-category" id="activeCategoryNote"></div>
+      <div class="chart-grid" id="gallery"></div>
+    </section>
+  </main>
+
+  <script src="latest_results.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
